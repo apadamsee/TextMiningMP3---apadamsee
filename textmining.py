@@ -3,6 +3,7 @@ MP3 Lyric Scraping from Genius
 
 @author: Afraz Padamsee
 
+This file contains the code for connecting to the Genius API and scraping lyrics from Genius
 """
 
 import requests
@@ -10,8 +11,6 @@ import urllib.request as urllib
 import json
 from bs4 import BeautifulSoup
 import re
-import lyricsgenius as genius
-
 
 def search_for_song(search_term):
     """
@@ -69,7 +68,7 @@ def get_lyrics(search_term):
     lyrics = html.find("div", class_="lyrics").get_text()
     return lyrics
 
-
+#### For scraping if you have the song ID
 # song_id = 82926
 # querystring = "https://api.genius.com/songs/" + str(song_id)  # Songs endpoint
 # request = urllib.Request(querystring)
